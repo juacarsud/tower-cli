@@ -1,0 +1,48 @@
+---
+- name: create workflows for enterprise
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Create Workflows
+      shell: tower-cli workflow create --name="{{ item | replace(" ", "")}}-IAC-DEV-VW-WIN2016-IIS" --organization="{{ item }}"
+      with_items:
+        - empresa 1
+        - empresa 2
+        - empresa 3
+        - empresa 4
+        - empresa 5
+        - empresa 6
+        - empresa 7
+    - name: Update Schema
+      shell: tower-cli workflow schema "{{ item | replace(" ", "")}}-IAC-DEV-VW-WIN2016-IIS @schema.yml
+      with_items:
+        - empresa1
+        - empresa2
+        - empresa3
+        - empresa4
+        - empresa5
+        - empresa6
+        - empresa7
+    - name: template
+      template:
+        src: s.json.j2
+        dest: /tmp/"{{ item }}.json"
+       with_items:
+        - empresa1
+        - empresa2
+        - empresa3
+        - empresa4
+        - empresa5
+        - empresa6
+        - empresa7
+    
+    - name: Update Survey
+      shell: tower-cli workflow modify --name="{{ item | replace(" ", "")}"-IAC-DEV-VW-WIN2016-IIS" --survey-spec=@"{{ item }}".json
+      with_items:
+        - empresa1
+        - empresa2
+        - empresa3
+        - empresa4
+        - empresa5
+        - empresa6
+        - empresa7

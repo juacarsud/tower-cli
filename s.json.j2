@@ -1,0 +1,63 @@
+{
+  "name": "",
+  "description": "",
+  "spec": [
+    {
+      "question_name": "Flavor",
+      "question_description": "Small : 1 CPU - 4GB RAM, Medium: 2 CPU - 8GB RAM, Large: 4 CPU - 16GB RAM, ExtraLarge: 8 CPU - 24 GB RAM",
+      "required": true,
+      "type": "multiplechoice",
+      "variable": "var_flavorname",
+      "min": null,
+      "max": null,
+      "default": "",
+      "choices": "small\nmedium\nlarge\nextralarge"
+    },
+    {
+      "question_name": "Email",
+      "question_description": "Email Address for send provisioning details",
+      "required": true,
+      "type": "text",
+      "variable": "email_job",
+      "min": 0,
+      "max": 1024,
+      "default": "",
+      "choices": "",
+      "new_question": true
+    },
+    {
+      "question_name": "Compa\u00f1ia",
+      "question_description": "",
+      "required": true,
+      "type": "multiplechoice",
+      "variable": "emp",
+      "min": null,
+      "max": null,
+      "default": "BANCO SECURITY",
+      "choices": "BANCO SECURITY"
+    },
+    {
+      "question_name": "Environment",
+      "question_description": "",
+      "required": true,
+      "type": "multiplechoice",
+      "variable": "envr",
+      "min": null,
+      "max": null,
+      "default": "Desarrollo",
+      "choices": "Desarrollo"
+    },
+    {
+      "question_name": "Subsistema",
+      "question_description": "",
+      "required": true,
+      "type": "multiplechoice",
+      "variable": "subsistema",
+      "min": null,
+      "max": null,
+      "default": "WINDOWS IIS",
+      "choices": "WINDOWS IIS",
+      "new_question": true
+    }
+  ]
+}

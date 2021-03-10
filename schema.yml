@@ -1,0 +1,19 @@
+- id: 611
+  job_template: 137
+  success_nodes:
+  - id: 610
+    job_template: 139
+    success_nodes:
+    - always_nodes:
+      - failure_nodes:
+        - id: 612
+          job_template: 114
+        id: 613
+        job_template: 111
+        success_nodes:
+        - id: 609
+          job_template: 233
+        - id: 641
+          job_template: 242
+      id: 608
+      job_template: 138
